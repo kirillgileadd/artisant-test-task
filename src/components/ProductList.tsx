@@ -18,7 +18,7 @@ const ProductListInner = styled(Flex)`
 const ProductList: FC<ProductListProps> = ({products}) => {
     return (
         <ProductListInner justify='space-between'>
-            {products.map(product => <ProductItem {...product}/>)}
+            {products.map(product => <ProductItem key={product.product_id} {...product}/>)}
         </ProductListInner>
     );
 };

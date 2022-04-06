@@ -7,9 +7,9 @@ interface StyleTypographyProp {
   color?: string;
 }
 
-type StyleTypographyProps = SpaceProps & LayoutProps & TypographyProps & StyleTypographyProp
+type StyleTypographyTypes = SpaceProps & LayoutProps & TypographyProps & StyleTypographyProp
 
-const StyleTypography = styled.div<StyleTypographyProps>`
+const StyleTypography = styled.div<StyleTypographyTypes>`
   ${variant({
     variants: {
       title: {
@@ -33,7 +33,7 @@ StyleTypography.defaultProps = {
   variant: 'text',
 }
 
-const Typography: FC<StyleTypographyProps> = (props) => {
+const Typography: FC<StyleTypographyTypes> = (props) => {
     return <StyleTypography {...props} />
 };
 
