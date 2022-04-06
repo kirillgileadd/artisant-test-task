@@ -3,7 +3,7 @@ import {productReducer} from "./productReducer";
 
 
 export const rootReducer = combineReducers({
-    products: productReducer
+    product: productReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>
