@@ -4,6 +4,12 @@ import ProductList from "../components/ProductList";
 import {useActions} from "../hooks/useActions";
 import {useTypeSelector} from "../hooks/useTypeSelector";
 import {useSortedPosts} from "../hooks/useProduct";
+import Loader from "../components/Loader";
+import styled from "styled-components";
+
+const Products = styled.div`
+  height: calc(100vh - 200px);
+`
 
 const Catalog: FC = () => {
     const [check, setCheck] = useState<boolean>(false)
@@ -22,9 +28,9 @@ const Catalog: FC = () => {
     return (
         <div>
             <CatalogNavBar check={check} handleCheckboxChange={handleCheckboxChange}/>
-            {
-                loading ? <div>...Loading</div> : <ProductList products={sortedProducts}/>
-            }
+            <Products>
+                {loading ? <Loader/> : <ProductList products={sortedProducts}/>}
+            </Products>
         </div>
     );
 };
